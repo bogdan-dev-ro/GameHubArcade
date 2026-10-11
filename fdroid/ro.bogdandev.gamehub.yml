@@ -1,0 +1,27 @@
+Categories:
+  - Games
+License: GPL-3.0-only
+AuthorName: bogdan-dev-ro
+AuthorWebSite: https://github.com/bogdan-dev-ro
+WebSite: https://github.com/bogdan-dev-ro/GameHubArcade
+SourceCode: https://github.com/bogdan-dev-ro/GameHubArcade
+IssueTracker: https://github.com/bogdan-dev-ro/GameHubArcade/issues
+Bitcoin: bc1q6vh5k8e6mm2fx9unqznn09q53dlrtf8m8d0aex
+
+AutoName: Game Hub Arcade
+
+RepoType: git
+Repo: https://github.com/bogdan-dev-ro/GameHubArcade.git
+
+Builds:
+  - versionName: 1.0.0
+    versionCode: 1
+    commit: v1.0.0
+    subdir: app
+    gradle:
+      - yes
+
+AutoUpdateMode: Version
+UpdateCheckMode: Tags
+CurrentVersion: 1.0.0
+CurrentVersionCode: 1

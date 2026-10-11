@@ -1,0 +1,9 @@
+Game Hub Arcade is a quiet little arcade in your pocket: seventeen classic games in one app, with no ads, no accounts and no internet connection needed.
+
+Sit down with a friend on the same phone, or play against a robot that you can set to Medium or Hard. Tic-Tac-Toe from 3x3 up to 7x7, Chess (with a stopwatch or a countdown clock), Dame, Backgammon, Connect Four, Mancala, Dots and Boxes and Memory are all here. Against the robot you can also play Battleship, placing your own ships or letting the game shuffle them, and Crazy Eights.
+
+When you are on your own there is Blackjack with cards that are really dealt and flipped, Solitaire, Sudoku with three levels, Minesweeper, 2048, Falling Blocks and Snake.
+
+A few small things that make it nicer to use: star your favourite games and they jump to the top of the list, every game has a "?" button that explains the rules in a few lines, you can pick a black or white background, and soft relaxing music plays in the background. You can switch the music off completely or turn off only the tracks you do not like. It works in portrait and landscape, on phones and tablets.
+
+Free software under the GPL-3.0 licence. Source code on GitHub: bogdan-dev-ro.
