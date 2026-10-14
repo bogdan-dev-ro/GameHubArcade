@@ -5,6 +5,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      KS_B64: ${{ secrets.KEYSTORE_BASE64 }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
@@ -14,8 +16,18 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: 8.7
-      - run: gradle assembleDebug
+      - name: Prepare signing key (only if the secrets exist)
+        run: |
+          if [ -n "$KS_B64" ]; then
+            echo "$KS_B64" | base64 -d > "$RUNNER_TEMP/release.jks"
+            echo "KEYSTORE_FILE=$RUNNER_TEMP/release.jks" >> "$GITHUB_ENV"
+            echo "KEYSTORE_PASSWORD=${{ secrets.KEYSTORE_PASSWORD }}" >> "$GITHUB_ENV"
+            echo "KEY_ALIAS=${{ secrets.KEY_ALIAS }}" >> "$GITHUB_ENV"
+          fi
+      - name: Build
+        run: |
+          if [ -n "$KS_B64" ]; then gradle assembleRelease; else gradle assembleDebug; fi
       - uses: actions/upload-artifact@v4
         with:
-          name: GameHubArcade-debug-apk
-          path: app/build/outputs/apk/debug/*.apk
+          name: GameHubArcade-apk
+          path: app/build/outputs/apk/**/*.apk
